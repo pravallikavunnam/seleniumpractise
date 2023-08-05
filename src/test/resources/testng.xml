@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestNG Regression Suite" thread-count="5"
+	parallel="tests" verbose="4"> 
+<!--  parallel execution is controlled by Unit Testing framework of specific language here TestNG  -->
+<!--  parallel execution done parallely  -->
+<!--  50 thread count  and 50 tests then 50 threads will be launched which is not a good practice where system will get crash-->
+<!--  5 thread count and 50 tests then 5 threads will be generated once 5 tests or how many are done are done then next tests will be executed-->
+
+<!--if we want more details log from testng we use min is 1 and max=10 generally we follow 4 -->
+
+	<test name="Google Test">
+		<parameter name="browser" value="chrome"/>
+		<parameter name="headless" value="true"/>
+		<parameter name="url" value="https://www.google.com/"/>
+		
+		<classes>
+			<class name="myTests.GoogleTest" />
+		</classes>
+	</test>
+
+	<test name="OpenCart Test">
+	<parameter name="browser" value="firefox"/>
+	<parameter name="headless" value="true"/>
+	<parameter name="url" value="https://naveenautomationlabs.com/opencart/index.php?route=account/login"/>
+		<classes>
+			<class name="myTests.OpenCartTest" />
+		</classes>
+	</test>
+	
+	<test name="Orange HRM Test">
+	<parameter name="browser" value="edge"/>
+	<parameter name="headless" value="true"/>
+	<parameter name="url" value="https://www.orangehrm.com/en/30-day-free-trial/"/>
+		<classes>
+			<class name="myTests.OrangeHRMTest" />
+		</classes>
+	</test>
+	
+	
+	<test name="Search Test">
+	<parameter name="browser" value="firefox"/>
+	<parameter name="headless" value="true"/> <!-- headless is equal to true is your configuration data-->
+	<parameter name="url" value="https://naveenautomationlabs.com/opencart/index.php?route=account/login"/>
+		<classes>
+			<class name="myTests.SearchTest" />
+		</classes>
+	</test>
+	
+</suite>
